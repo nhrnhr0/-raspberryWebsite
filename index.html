@@ -40,6 +40,7 @@
             fetch('./vid_src.json')
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data);
                     if(currentVertion != data.vertion) {
                         vidDom.pause();
                         while(vidDom.firstChild) vidDom.removeChild(vidDom.lastChild);
