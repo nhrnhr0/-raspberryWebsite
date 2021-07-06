@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: black;
+        }
+        * {
+        }
+        .vid-wraper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .vid-wraper video {
+            max-width: 100vw;
+            max-height: 100vh;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="vid-wraper">
+        <video loop id="vid">
+        </video>
+    </div>
+    <script>
+        var vidDom = document.querySelector('#vid')
+        var currentVertion = undefined;
+        vidDom.play();
+        setInterval(()=> {
+            fetch('http://127.0.0.1:5501/vid_src.json')
+                .then(response => response.json())
+                .then(data => {
+                    if(currentVertion != data.vertion) {
+                        vidDom.pause();
+                        while(vidDom.firstChild) vidDom.removeChild(vidDom.lastChild);
+
+                        for(var i = 0; i< data.vid.sources.length; i++) {
+                            var source = document.createElement('source');
+                            source.setAttribute('src', data.vid.sources[i]);
+                            vidDom.appendChild(source);
+                        }
+                        vidDom.load();
+                        vidDom.play();
+                        currentVertion = data.vertion;
+                        console.log('changed');
+                    }else {
+                        console.log('not changed');
+                    }
+                    vidDom.play();
+                    
+                });
+        },4000);
+        
+    </script>
+</body>
+</html>
