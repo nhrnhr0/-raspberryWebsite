@@ -2,7 +2,7 @@
     "vertion" : "1.0.11",
     "vid" : {
         "sources": [
-            "./vid2.mp4"
+            "./vid.mp4"
         ]
     }
 }
