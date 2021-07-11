@@ -1,8 +1,8 @@
 {
-    "vertion" : "1.0.14",
+    "vertion" : "1.0.15",
     "vid" : {
         "sources": [
-            "./vid3.mp4"
+            "./vid1.mp4"
         ]
     }
 }
