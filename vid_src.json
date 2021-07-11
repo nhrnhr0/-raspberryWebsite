@@ -1,8 +1,8 @@
 {
-    "vertion" : "1.0.15",
+    "vertion" : "1.0.16",
     "vid" : {
         "sources": [
-            "./vid1.mp4"
+            "./Nike_Air_VaporMax.mp4"
         ]
     }
 }
