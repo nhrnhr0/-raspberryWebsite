@@ -1,8 +1,8 @@
 {
-    "vertion" : "1.0.21",
+    "vertion" : "1.0.22",
     "vid" : {
         "sources": [
-            "./vid3.mp4"
+            "./PandaSafety.mp4"
         ]
     }
 }

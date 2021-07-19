@@ -50,6 +50,7 @@
                             source.setAttribute('src', data.vid.sources[i]);
                             vidDom.appendChild(source);
                         }
+                        vidDom.volume = 0;
                         vidDom.load();
                         vidDom.play();
                         currentVertion = data.vertion;
